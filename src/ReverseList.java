@@ -7,19 +7,19 @@ public class ReverseList {
             return null;
         }
         // 尾节点
-        ListNode reverHead = null;
+        ListNode reverseHead = null;
         // 前一个结点
         ListNode preNode = null;
         ListNode currNode = head;
         while (currNode != null){
             ListNode next = currNode.next;
             if(next != null){
-                reverHead = next;
+                reverseHead = next;
             }
             currNode.next = preNode;
             preNode = currNode;
             currNode = next;
         }
-        return reverHead;
+        return reverseHead;
     }
 }
