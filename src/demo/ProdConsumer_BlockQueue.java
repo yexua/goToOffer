@@ -57,7 +57,7 @@ class MyResource{
             }
             TimeUnit.SECONDS.sleep(1);
         }
-        System.out.println(Thread.currentThread().getName() + "/ FLAG = false,生产结束");
+        System.out.println(Thread.currentThread().getName() + "\t FLAG = false,生产结束");
     }
 
     public void myConsumer() throws InterruptedException{
