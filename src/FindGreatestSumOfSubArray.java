@@ -8,8 +8,9 @@
 public class FindGreatestSumOfSubArray {
     public static void main(String[] args) {
         FindGreatestSumOfSubArray a = new FindGreatestSumOfSubArray();
-        int[] arr = {-2, -8, -1, -5, -9};
-        System.out.println(a.FindGreatestSumOfSubArray(arr));
+//        int[] arr = {-2, -8, -1, -5, -9};
+        int[] arr = {2,8,1,5,9};
+        System.out.println(a.FindGreatestSumOfSubArray_dyn(arr));
     }
 
     public int FindGreatestSumOfSubArray(int[] array) {
@@ -28,5 +29,18 @@ public class FindGreatestSumOfSubArray {
             }
         }
         return greatestSum;
+    }
+
+    public int FindGreatestSumOfSubArray_dyn(int[] array) {
+        if (array == null || array.length <= 0) {
+            return 0;
+        }
+        int res = array[0];
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            max = Math.max(max + array[i], array[i]);
+            res = Math.max(max, res);
+        }
+        return res;
     }
 }
