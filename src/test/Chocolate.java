@@ -42,7 +42,7 @@ public class Chocolate {
     public static void get(int n){
         int result = 1;
         for(int i = 0; i < n - 6; i++){
-            result *= 2;;
+            result *= 2;
             result %= 6666666;
         }
         System.out.println(result);

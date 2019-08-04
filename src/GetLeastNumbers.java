@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -41,14 +40,6 @@ class GetLeastNumbers {
         GetLeastNumbers g = new GetLeastNumbers();
         int[] arr = {4,5,1,6,2,7,3,8};
         System.out.println(g.getLeastNumbers(arr, 4).toString());
-        StringBuffer s1=new StringBuffer(10);s1.append("1234");
-        System.out.println(s1.length());
-
-        List Listlist1 = new ArrayList();
-        Listlist1.add(0);
-        List Listlist2 = Listlist1;
-        System.out.println(Listlist1.get(0) instanceof Integer);
-        System.out.println(Listlist2.get(0) instanceof Integer);
 
     }
 }

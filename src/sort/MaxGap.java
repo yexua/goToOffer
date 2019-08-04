@@ -15,9 +15,9 @@ public class MaxGap {
         int len = arr.length;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < len; i++) {
-            min = Math.min(min, arr[i]);
-            max = Math.max(max, arr[i]);
+        for (int anArr : arr) {
+            min = Math.min(min, anArr);
+            max = Math.max(max, anArr);
         }
         if (min == max) {
             return 0;
@@ -26,11 +26,11 @@ public class MaxGap {
         int[] maxs = new int[len + 1];
         int[] mins = new int[len + 1];
         int bid;
-        for (int i = 0; i < len; i++) {
+        for (int anArr : arr) {
             // 确定当前数属于几号桶
-            bid = bucket(arr[i], len, min, max);
-            mins[bid] = hasNum[bid] ? Math.min(mins[bid], arr[i]) : arr[i];
-            maxs[bid] = hasNum[bid] ? Math.max(maxs[bid], arr[i]) : arr[i];
+            bid = bucket(anArr, len, min, max);
+            mins[bid] = hasNum[bid] ? Math.min(mins[bid], anArr) : anArr;
+            maxs[bid] = hasNum[bid] ? Math.max(maxs[bid], anArr) : anArr;
             hasNum[bid] = true;
         }
         int res = 0;

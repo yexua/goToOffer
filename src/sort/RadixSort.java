@@ -26,10 +26,10 @@ public class RadixSort {
         int[] count = new int[radix];
         int[][] bucket = new int[radix][arr.length];
         for (int i = 0, n = 1; i < digit; i++, n *= 10) {
-            for (int j = 0; j < arr.length; j++) {
-                int digitOfElement = arr[j] / n % 10;
+            for (int anArr : arr) {
+                int digitOfElement = anArr / n % 10;
                 //放入对应的桶中
-                bucket[digitOfElement][count[digitOfElement]] = arr[j];
+                bucket[digitOfElement][count[digitOfElement]] = anArr;
                 //放入一个值，计数加1
                 count[digitOfElement]++;
             }
