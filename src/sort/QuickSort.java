@@ -1,7 +1,6 @@
 package sort;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class QuickSort {
     public static void quickSort(int[] arr) {
@@ -14,8 +13,8 @@ public class QuickSort {
     private static void quickSort(int[] arr, int l, int r) {
         if (l < r) { // l == r 则结束递归
             // 随机选定一个值与最后一个值交换作为判定值(随机快排)
-            //swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
-            swap(arr, l + new Random().nextInt(r - l) + l, r);
+            swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
+            //swap(arr, l + new Random().nextInt(r - l) + l, r);
             int[] p = partition(arr, l, r);
             quickSort(arr, l, p[0] - 1);  // 对 < x 的区域继续排序
             quickSort(arr, p[1] + 1, r);  // 对 > x 的区域继续排序
